@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTML Basics and Networking Presentation</title>
+<style>
+  
+  .nav-btns {
+    text-align: center;
+    margin: 10px;
+  }
+  button {
+    background-color: #1464f4;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin: 0 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+  }
+  button:hover {
+    background-color: #0a3ab9;
+  }
+  code {
+    background: #12294b;
+    padding: 3px 7px;
+    border-radius: 5px;
+    font-family: Consolas, monospace;
+    font-size: 1rem;
+    color: #a3d4ff;
+  }
+  iframe, audio, video {
+    border-radius: 10px;
+    margin-top: 15px;
+    max-width: 100%;
+    outline: none;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  body{
+  font-family: Arial, sans-serif;
+    background: #171c28;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set body height to full viewport height */
+    overflow: hidden; /* Hide scroll bars */}
+    .slide {
+    display: none;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    height: 600px;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #1f2a48 0%, #253358 100%);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.7);
+    position: relative;
+  }
+  .slide.active {
+    display: block;
+  }
+  h1, h2, h3 {
+    color: #00bfff;
+  }
+  p, ul {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-top: 5px;
+  }
+  ul.activity, ul.interview-questions {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+</style>
+</head>
+<body>
+
+    <div id="slide1" class="slide active">
+        <h1>Day 2: HTML Tables, Forms, and Media Embedding</h1>
+        <p>Overview of today's training topics:</p>
+        <ul>
+          <li>Tables with advanced cell controls (rowspan, colspan)</li>
+          <li>Forms: input elements, textarea, buttons, and various input types</li>
+          <li>Labels, fieldset, legend for accessible forms</li>
+          <li>Embedding media: audio, video, iframe (YouTube embed)</li>
+          <li>Hands-on tasks and interview questions</li>
+        </ul>
+        <div class="footer">Slide 1 of 30</div>
+      </div>
+      
+      <div id="slide2" class="slide">
+        <h2>HTML Tables Introduction</h2>
+        <p>Tables are used to display tabular data in rows and columns.</p>
+        <p>Basic tags:</p>
+        <ul>
+          <li><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (table row)</li>
+          <li><code>&lt;td&gt;</code> (table data cell)</li>
+          <li><code>&lt;th&gt;</code> (table header cell)</li>
+        </ul>
+        <div class="footer">Slide 2 of 30</div>
+      </div>
+      
+      <div id="slide3" class="slide">
+        <h2>Rowspan and Colspan Attributes</h2>
+        <p>Allow cells to span multiple rows or columns respectively:</p>
+        <ul>
+          <li><code>rowspan="2"</code> merges cell vertically in 2 rows</li>
+          <li><code>colspan="3"</code> merges cell horizontally in 3 columns</li>
+        </ul>
+        <p>Example:</p>
+        <pre style="background:#12294b; padding:10px; border-radius:7px; color:#a3d4ff;">
+      &lt;td rowspan="2"&gt;Merged Vertical Cell&lt;/td&gt;
+      &lt;td colspan="3"&gt;Merged Horizontal Cells&lt;/td&gt;
+        </pre>
+        <div class="footer">Slide 3 of 30</div>
+      </div>
+      
+      <div id="slide4" class="slide">
+        <h2>Table Example with Rowspan and Colspan</h2>
+        <table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; background-color:#2a3a73; color:#e0e6f3; width:100%; border-radius:8px;">
+          <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Contact</th>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+          <tr>
+            <td>Alice</td>
+            <td>alice@mail.com</td>
+            <td>123-456-7890</td>
+          </tr>
+          <tr>
+            <td>Bob</td>
+            <td colspan="2">No phone available</td>
+          </tr>
+        </table>
+        <div class="footer">Slide 4 of 30</div>
+      </div>
+      
+      <div id="slide5" class="slide">
+        <h2>HTML Forms Overview</h2>
+        <p>Forms allow users to input data which can be sent to a server or processed.</p>
+        <ul>
+          <li><code>&lt;form&gt;</code> container for form elements</li>
+          <li>Input elements: <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;button&gt;</code></li>
+        </ul>
+        <div class="footer">Slide 5 of 30</div>
+      </div>
+      
+      <div id="slide6" class="slide">
+        <h2>Input Types in Forms</h2>
+        <p>Common input types include:</p>
+        <ul>
+          <li><code>text</code> - single-line text input</li>
+          <li><code>password</code> - masked password input</li>
+          <li><code>email</code> - email address input</li>
+          <li><code>radio</code> - select one option from many</li>
+          <li><code>checkbox</code> - toggle options</li>
+          <li><code>date</code> - date picker</li>
+        </ul>
+        <div class="footer">Slide 6 of 30</div>
+      </div>
+      
+      <div id="slide7" class="slide">
+        <h2>Textarea and Button Elements</h2>
+        <p><code>&lt;textarea&gt;</code> is a multi-line text input:</p>
+        <pre style="background:#12294b; padding:10px; border-radius:7px; color:#a3d4ff;">
+      &lt;textarea name="comments" rows="4" cols="50"&gt;&lt;/textarea&gt;
+        </pre>
+        <p><code>&lt;button&gt;</code> element triggers form actions</p>
+        <div class="footer">Slide 7 of 30</div>
+      </div>
+      
+      <div id="slide8" class="slide">
+        <h2>Labels and Accessibility</h2>
+        <p><code>&lt;label&gt;</code> associates text with form fields for better usability and accessibility.</p>
+        <p>Example:</p>
+        <pre style="background:#12294b; padding:10px; border-radius:7px; color:#a3d4ff;">
+      &lt;label for="email"&gt;Email:&lt;/label&gt;
+      &lt;input type="email" id="email" name="email"&gt;
+        </pre>
+        <div class="footer">Slide 8 of 30</div>
+      </div>
+      
+      <div id="slide9" class="slide">
+        <h2>Fieldset and Legend</h2>
+        <p><code>&lt;fieldset&gt;</code> groups related form elements.</p>
+        <p><code>&lt;legend&gt;</code> gives a caption to the group.</p>
+        <pre style="background:#12294b; padding:10px;border-radius:7px; color:#a3d4ff;">
+      &lt;fieldset&gt;
+        &lt;legend&gt;Personal Info&lt;/legend&gt;
+        &lt;label&gt;Name:&lt;/label&gt; &lt;input type="text"&gt;
+      &lt;/fieldset&gt;
+        </pre>
+        <div class="footer">Slide 9 of 30</div>
+      </div>
+      
+      <div id="slide10" class="slide">
+        <h2>Form Example - Registration Form</h2>
+        <pre style="background:#12294b; padding:15px; border-radius:7px; color:#a3d4ff; overflow-x:auto;">
+      &lt;form action="/submit" method="POST"&gt;
+        &lt;label for="fname"&gt;First Name:&lt;/label&gt;
+        &lt;input type="text" id="fname" name="fname" required&gt;&lt;br&gt;&lt;br&gt;
+      
+        &lt;label for="email"&gt;Email:&lt;/label&gt;
+        &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+      
+        &lt;label&gt;Gender:&lt;/label&gt;
+        &lt;input type="radio" id="male" name="gender" value="male"&gt;
+        &lt;label for="male"&gt;Male&lt;/label&gt;
+        &lt;input type="radio" id="female" name="gender" value="female"&gt;
+        &lt;label for="female"&gt;Female&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+      
+        &lt;label&gt;Hobbies:&lt;/label&gt;
+        &lt;input type="checkbox" id="music" name="hobby" value="music"&gt;
+        &lt;label for="music"&gt;Music&lt;/label&gt;
+        &lt;input type="checkbox" id="sports" name="hobby" value="sports"&gt;
+        &lt;label for="sports"&gt;Sports&lt;/label&gt;&lt;br&gt;&lt;br&gt;
+      
+        &lt;label for="dob"&gt;Date of Birth:&lt;/label&gt;
+        &lt;input type="date" id="dob" name="dob"&gt;&lt;br&gt;&lt;br&gt;
+      
+        &lt;label for="comment"&gt;About You:&lt;/label&gt;&lt;br&gt;
+        &lt;textarea id="comment" name="comments" rows="4" cols="40"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+      
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+      &lt;/form&gt;
+        </pre>
+        <div class="footer">Slide 10 of 30</div>
+      </div>
+      
+      <div id="slide11" class="slide">
+        <h2>Embedding Media in HTML</h2>
+        <p>HTML5 supports embedding audio, video, and external content through:</p>
+        <ul>
+          <li><code>&lt;audio&gt;</code> tag for sound files</li>
+          <li><code>&lt;video&gt;</code> tag for video files</li>
+          <li><code>&lt;iframe&gt;</code> tag for embedding external content (e.g. YouTube)</li>
+        </ul>
+        <div class="footer">Slide 11 of 30</div>
+      </div>
+      
+      <div id="slide12" class="slide">
+        <h2>Audio Tag</h2>
+        <p>Supports multiple audio formats with fallback.</p>
+        <pre style="background:#12294b; padding:10px; border-radius:7px; color:#a3d4ff;">
+      &lt;audio controls&gt;
+        &lt;source src="audio-file.mp3" type="audio/mpeg"&gt;
+        Your browser does not support the audio element.
+      &lt;/audio&gt;
+        </pre>
+        <div class="footer">Slide 12 of 30</div>
+      </div>
+      
+      <div id="slide13" class="slide">
+        <h2>Video Tag</h2>
+        <p>Embed videos with playback controls.</p>
+        <pre style="background:#12294b; padding:10px; border-radius:7px; color:#a3d4ff;">
+      &lt;video width="320" height="240" controls&gt;
+        &lt;source src="video.mp4" type="video/mp4"&gt;
+        Your browser does not support the video tag.
+      &lt;/video&gt;
+        </pre>
+        <div class="footer">Slide 13 of 30</div>
+      </div>
+      
+      <div id="slide14" class="slide">
+        <h2>Iframe Tag for Embedding YouTube Videos</h2>
+        <p>Integrates external web content like videos:</p>
+        <pre style="background:#12294b; padding:10px; border-radius:7px; color:#a3d4ff;">
+      &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen&gt;&lt;/iframe&gt;
+        </pre>
+        <div class="footer">Slide 14 of 30</div>
+      </div>
+      
+      <div id="slide15" class="slide">
+        <h2>Embedding Example: Audio Player</h2>
+        <audio controls>
+          <source src="https://www.kozco.com/tech/piano2-CoolEdit.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="footer">Slide 15 of 30</div>
+      </div>
+      
+      <div id="slide16" class="slide">
+        <h2>Embedding Example: Video Player</h2>
+        <video width="320" height="240" controls>
+          <source src="https://sample-videos.com/video123/mp4/240/big_buck_bunny_240p_1mb.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="footer">Slide 16 of 30</div>
+      </div>
+      
+      <div id="slide17" class="slide">
+        <h2>Embedding Example: YouTube Video</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2Vv-BfVoq4g" 
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+        <div class="footer">Slide 17 of 30</div>
+      </div>
+      
+      <div id="slide18" class="slide">
+        <h2>Best Practices for Forms</h2>
+        <ul>
+          <li>Use semantic HTML elements</li>
+          <li>Label every input clearly</li>
+          <li>Group related inputs with fieldset and legend</li>
+          <li>Validate required fields</li>
+          <li>Use placeholders carefully</li>
+        </ul>
+        <div class="footer">Slide 18 of 30</div>
+      </div>
+      
+      <div id="slide19" class="slide">
+        <h2>Security in Forms</h2>
+        <ul>
+          <li>Never trust user input; validate on server</li>
+          <li>Use HTTPS for secure data transmission</li>
+          <li>Avoid exposing sensitive info in URLs</li>
+          <li>Implement CAPTCHA to avoid bots</li>
+        </ul>
+        <div class="footer">Slide 19 of 30</div>
+      </div>
+      
+      <div id="slide20" class="slide">
+        <h2>Activity: Create a Registration Form</h2>
+        <p>Build a form with:</p>
+        <ul class="activity">
+          <li>Fields: name, email, password, gender (radio), hobbies (checkbox), DOB, comments</li>
+          <li>Use labels, fieldset, legend</li>
+          <li>Validate email and required fields</li>
+          <li>Use a submit button</li>
+        </ul>
+        <div class="footer">Slide 20 of 30</div>
+      </div>
+      
+      <div id="slide21" class="slide">
+        <h2>Activity: Embed Media</h2>
+        <p>Add to your registration page:</p>
+        <ul class="activity">
+          <li>A YouTube video relevant to your topic using <code>&lt;iframe&gt;</code></li>
+          <li>An audio message or music track using <code>&lt;audio&gt;</code></li>
+        </ul>
+        <div class="footer">Slide 21 of 30</div>
+      </div>
+      
+      <div id="slide22" class="slide">
+        <h2>Interview Questions: Tables & Forms</h2>
+        <ul class="interview-questions">
+          <li>Explain how to merge table cells using rowspan and colspan.</li>
+          <li>What is the difference between <code>radio</code> and <code>checkbox</code> inputs?</li>
+          <li>Why should every form input have a label?</li>
+          <li>How do you group related fields in a form?</li>
+          <li>What are best practices to secure HTML forms?</li>
+        </ul>
+        <div class="footer">Slide 22 of 30</div>
+      </div>
+      
+      <div id="slide23" class="slide">
+        <h2>Responsive Tables and Forms</h2>
+        <ul>
+          <li>Prefer flexible widths and stacking for mobile</li>
+          <li>Avoid fixed widths for input fields and tables</li>
+          <li>Use CSS media queries to adjust layout on small screens</li>
+        </ul>
+        <div class="footer">Slide 23 of 30</div>
+      </div>
+      
+      <div id="slide24" class="slide">
+        <h2>Form Validation</h2>
+        <ul>
+          <li>Use HTML5 validation attributes: <code>required</code>, <code>pattern</code>, <code>type</code></li>
+          <li>Use custom validation with JavaScript for better UX</li>
+          <li>Always validate on the server side for security</li>
+        </ul>
+        <div class="footer">Slide 24 of 30</div>
+      </div>
+      
+      <div id="slide25" class="slide">
+        <h2>Multimedia Formats Support</h2>
+        <ul>
+          <li>Audio: mp3, ogg, wav</li>
+          <li>Video: mp4, webm, ogg</li>
+          <li>Browser compatibility varies; provide multiple sources if possible</li>
+        </ul>
+        <div class="footer">Slide 25 of 30</div>
+      </div>
+      
+      <div id="slide26" class="slide">
+        <h2>Embedding Content Responsively</h2>
+        <p>Make iframes and videos responsive by wrapping in a container with CSS.</p>
+        <pre style="background:#12294b; padding:8px; border-radius:7px; color:#a3d4ff; overflow-x:auto;">
+      .responsive-iframe {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+      }
+      
+      .responsive-iframe iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+        </pre>
+        <div class="footer">Slide 26 of 30</div>
+      </div>
+      
+      <div id="slide27" class="slide">
+        <h2>Tips for Writing Clean HTML Forms</h2>
+        <ul>
+          <li>Use clear naming conventions</li>
+          <li>Group logically related inputs</li>
+          <li>Comment complex form sections</li>
+          <li>Maintain semantic structure</li>
+        </ul>
+        <div class="footer">Slide 27 of 30</div>
+      </div>
+      
+      <div id="slide28" class="slide">
+        <h2>Debugging Forms and Tables</h2>
+        <ul>
+          <li>Use browser developer tools to inspect HTML elements</li>
+          <li>Validate HTML using online validators (W3C)</li>
+          <li>Test forms with various inputs and browsers</li>
+        </ul>
+        <div class="footer">Slide 28 of 30</div>
+      </div>
+      
+      <div id="slide29" class="slide">
+        <h2>Summary</h2>
+        <ul>
+          <li>Mastered tables with rowspan and colspan</li>
+          <li>Built forms with diverse input types and accessible labels</li>
+          <li>Embedded audio, video, and external content (YouTube)</li>
+          <li>Followed best practices for validation, responsiveness, and security</li>
+        </ul>
+        <div class="footer">Slide 29 of 30</div>
+      </div>
+      
+      <div id="slide30" class="slide">
+        <h2>Thank You!</h2>
+        <p>Any questions or clarifications?</p>
+        <p>Practice building complex forms and embedding media for web projects.</p>
+        <p><em>Keep learning and stay curious!</em></p>
+        <div class="footer">Slide 30 of 30</div>
+      </div>
+
+<div class="nav-btns">
+  <button id="prevBtn" onclick="prevSlide()">Previous</button>
+  <button id="nextBtn" onclick="nextSlide()">Next</button>
+  <a href="day3.html">Day 3</a>
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 30;
+
+  function showSlide(n) {
+    const slides = document.querySelectorAll(".slide");
+    if (n > totalSlides) currentSlide = totalSlides;
+    if (n < 1) currentSlide = 1;
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[currentSlide - 1].classList.add("active");
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides) {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlide > 1) {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+  }
+</script>
+
+</body>
+</html>

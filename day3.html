@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 3: Semantic HTML5 & Accessibility Basics</title>
+<style>
+   body{
+  font-family: Arial, sans-serif;
+    background: #171c28;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set body height to full viewport height */
+    overflow: hidden; /* Hide scroll bars */}
+  .slide {
+    display: none;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    height: 600px;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #1f2a48 0%, #253358 100%);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.7);
+    position: relative;
+  }
+  .slide.active {
+    display: block;
+  }
+  h1, h2, h3 {
+    color: #00bfff;
+  }
+  p, ul {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-top: 5px;
+  }
+  ul.activity, ul.interview-questions {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
+    font-size: 0.85rem;
+    color: #7aa9ff;
+  }
+  .nav-btns {
+    text-align: center;
+    margin: 10px;
+  }
+  button {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    margin: 0 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+  }
+  button:hover {
+    background-color: #004c99;
+  }
+  code {
+    background: #0e1742;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 1rem;
+    color: #9dfdff;
+  }
+</style>
+</head>
+<body>
+
+<div id="slide1" class="slide active">
+  <h1>Day 3: Semantic HTML5 & Accessibility Basics</h1>
+  <p>Topics Covered:</p>
+  <ul>
+    <li>Semantic HTML5 Tags (<code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, etc.)</li>
+    <li>Div vs Span</li>
+    <li>Inline vs Block Recap</li>
+    <li>Accessibility Basics (<code>alt</code>, <code>label</code>, <code>aria-</code> attributes)</li>
+    <li>Interview Questions & Activities</li>
+  </ul>
+  <footer>Slide 1 / 30</footer>
+</div>
+
+<div id="slide2" class="slide">
+  <h2>Why Semantic HTML?</h2>
+  <ul>
+    <li>Conveys meaning & structure to browsers and developers</li>
+    <li>Improves Accessibility for assistive technologies</li>
+    <li>Better SEO - search engines understand content hierarchy</li>
+    <li>Easier to maintain and understand code</li>
+  </ul>
+  <footer>Slide 2 / 30</footer>
+</div>
+
+<div id="slide3" class="slide">
+  <h2>Common Semantic Tags in HTML5</h2>
+  <ul>
+    <li><code>&lt;header&gt;</code> - Introductory content or site branding</li>
+    <li><code>&lt;nav&gt;</code> - Navigation links</li>
+    <li><code>&lt;main&gt;</code> - Main page content</li>
+    <li><code>&lt;article&gt;</code> - Independent content piece, like blog posts</li>
+    <li><code>&lt;section&gt;</code> - Thematic grouping of content</li>
+    <li><code>&lt;aside&gt;</code> - Sidebar or tangential content</li>
+    <li><code>&lt;footer&gt;</code> - Footer information or links</li>
+  </ul>
+  <footer>Slide 3 / 30</footer>
+</div>
+
+<div id="slide4" class="slide">
+  <h2>Example: Semantic Page Layout</h2>
+  <p class="code-title">HTML:</p>
+  <pre>&lt;header&gt;
+  &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;About&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+  &lt;article&gt;
+    &lt;h2&gt;Article Title&lt;/h2&gt;
+    &lt;p&gt;Article content here...&lt;/p&gt;
+  &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+  &lt;p&gt;© 2024 My Website&lt;/p&gt;
+&lt;/footer&gt;</pre>
+  <footer>Slide 4 / 30</footer>
+</div>
+
+<div id="slide5" class="slide">
+  <h2>Div &lt;div&gt; Overview</h2>
+  <ul>
+    <li>Generic container with no semantic meaning</li>
+    <li>Used mainly for styling or grouping elements</li>
+    <li>Often overused instead of semantic tags</li>
+    <li>Does not improve accessibility or SEO</li>
+  </ul>
+  <footer>Slide 5 / 30</footer>
+</div>
+
+<div id="slide6" class="slide">
+  <h2>Span &lt;span&gt; Overview</h2>
+  <ul>
+    <li>Generic inline container</li>
+    <li>Used for styling small parts of text or grouping inline content</li>
+    <li>Does not add any semantic meaning</li>
+    <li>Useful for inline CSS or JS targeting</li>
+  </ul>
+  <footer>Slide 6 / 30</footer>
+</div>
+
+<div id="slide7" class="slide">
+  <h2>Block vs Inline Elements Recap</h2>
+  <ul>
+    <li><span class="highlight">Block elements:</span> Take full width, start on new line (e.g., <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>)</li>
+    <li><span class="highlight">Inline elements:</span> Take only required width, flow within text (e.g., <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;img&gt;</code>)</li>
+  </ul>
+  <footer>Slide 7 / 30</footer>
+</div>
+
+<div id="slide8" class="slide">
+  <h2>Why Use Semantic Tags Instead of Divs?</h2>
+  <ul>
+    <li>Improves document readability</li>
+    <li>Helps Screen Readers understand context</li>
+    <li>Assists search engines for better ranking</li>
+    <li>Helps with easier front-end maintenance</li>
+  </ul>
+  <footer>Slide 8 / 30</footer>
+</div>
+
+<div id="slide9" class="slide">
+  <h2>Accessibility Basics: Importance</h2>
+  <ul>
+    <li>Ensures web content is usable by people with disabilities</li>
+    <li>Compliance with legal standards (WCAG, ADA)</li>
+    <li>Improves usability for everyone</li>
+    <li>Enables screen readers and assistive technology to communicate content</li>
+  </ul>
+  <footer>Slide 9 / 30</footer>
+</div>
+
+<div id="slide10" class="slide">
+  <h2>Using <code>alt</code> Attribute on Images</h2>
+  <ul>
+    <li>Describe image content or function</li>
+    <li>Essential for screen readers</li>
+    <li>Empty <code>alt=""</code> for decorative images</li>
+    <li>Example:</li>
+  </ul>
+  <p class="code-title">Example:</p>
+  <pre>&lt;img src="logo.png" alt="Company logo"&gt;</pre>
+  <footer>Slide 10 / 30</footer>
+</div>
+
+<div id="slide11" class="slide">
+  <h2>Using <code>label</code> for Form Inputs</h2>
+  <ul>
+    <li>Associates text with form controls</li>
+    <li>Improves form accessibility</li>
+    <li>Use <code>&lt;label for="id"&gt;</code> to link label to input</li>
+    <li>Example:</li>
+  </ul>
+  <p class="code-title">Example:</p>
+  <pre>&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" name="email"&gt;</pre>
+  <footer>Slide 11 / 30</footer>
+</div>
+
+<div id="slide12" class="slide">
+  <h2>ARIA Attributes Overview</h2>
+  <ul>
+    <li>ARIA = Accessible Rich Internet Applications</li>
+    <li>Enhance accessibility when native HTML lacks features</li>
+    <li>Common attributes: <code>aria-label</code>, <code>aria-hidden</code>, <code>aria-describedby</code></li>
+    <li>Use ARIA cautiously, don't replace native HTML semantics</li>
+  </ul>
+  <footer>Slide 12 / 30</footer>
+</div>
+
+<div id="slide13" class="slide">
+  <h2>Example: Using <code>aria-label</code></h2>
+  <pre>&lt;button aria-label="Close menu"&gt;&lt;span&gt;X&lt;/span&gt;&lt;/button&gt;</pre>
+  <p>This gives screen readers a descriptive name for the button.</p>
+  <footer>Slide 13 / 30</footer>
+</div>
+
+<div id="slide14" class="slide">
+  <h2>Example: Hiding Elements From Screen Readers</h2>
+  <pre>&lt;div aria-hidden="true"&gt;Decorative content&lt;/div&gt;</pre>
+  <p>This prevents assistive tech from reading irrelevant content.</p>
+  <footer>Slide 14 / 30</footer>
+</div>
+
+<div id="slide15" class="slide">
+  <h2>Semantic HTML & Accessibility Best Practices</h2>
+  <ul>
+    <li>Use semantic HTML first</li>
+    <li>Provide descriptive alt text for images</li>
+    <li>Label all form controls</li>
+    <li>Use ARIA when necessary to fill gaps</li>
+    <li>Ensure keyboard navigability</li>
+  </ul>
+  <footer>Slide 15 / 30</footer>
+</div>
+
+<div id="slide16" class="slide">
+  <h2>Activity: Semantic Layout Task</h2>
+  <p>Build a simple webpage layout using semantic HTML5 elements:</p>
+  <ul>
+    <li>Use <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code></li>
+    <li>Add a navigation menu with 3 links</li>
+    <li>Add article with heading and paragraph</li>
+  </ul>
+  <p><strong>Goal:</strong> Practice semantic layout and improve code readability.</p>
+  <footer>Slide 16 / 30</footer>
+</div>
+
+<div id="slide17" class="slide">
+  <h2>Activity: Accessibility Checklist</h2>
+  <p>For your semantic page, ensure you:</p>
+  <ul>
+    <li>Add descriptive <code>alt</code> text to images</li>
+    <li>Use <code>label</code> tags for form fields</li>
+    <li>Ensure keyboard accessibility</li>
+    <li>Check color contrast</li>
+  </ul>
+  <p>Try testing with a screen reader if possible.</p>
+  <footer>Slide 17 / 30</footer>
+</div>
+
+<div id="slide18" class="slide">
+  <h2>Interview Question 1</h2>
+  <p><strong>Q:</strong> What is the difference between <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code> in HTML5?</p>
+  <p><strong>A:</strong> <code>article</code> represents a standalone piece of content suitable for syndication; <code>section</code> groups related content thematically but may not be standalone.</p>
+  <footer>Slide 18 / 30</footer>
+</div>
+
+<div id="slide19" class="slide">
+  <h2>Interview Question 2</h2>
+  <p><strong>Q:</strong> Why should you avoid using <code>&lt;div&gt;</code> tags excessively?</p>
+  <p><strong>A:</strong> Because <code>div</code> tags lack semantic meaning, overusing divs can reduce accessibility, SEO benefits, and make code harder to maintain.</p>
+  <footer>Slide 19 / 30</footer>
+</div>
+
+<div id="slide20" class="slide">
+  <h2>Interview Question 3</h2>
+  <p><strong>Q:</strong> What is the purpose of the <code>alt</code> attribute on images?</p>
+  <p><strong>A:</strong> It provides alternative text for screen readers when images cannot be seen or loaded, improving accessibility.</p>
+  <footer>Slide 20 / 30</footer>
+</div>
+
+<div id="slide21" class="slide">
+  <h2>Interview Question 4</h2>
+  <p><strong>Q:</strong> When should you use ARIA attributes?</p>
+  <p><strong>A:</strong> Use ARIA to fill in gaps where native HTML elements do not provide sufficient semantic meaning or accessibility.</p>
+  <footer>Slide 21 / 30</footer>
+</div>
+
+<div id="slide22" class="slide">
+  <h2>Interview Question 5</h2>
+  <p><strong>Q:</strong> What is the difference between <code>&lt;span&gt;</code> and <code>&lt;div&gt;</code>?</p>
+  <p><strong>A:</strong> <code>span</code> is an inline element usually used for small pieces of text; <code>div</code> is a block-level container for grouping larger sections.</p>
+  <footer>Slide 22 / 30</footer>
+</div>
+
+<div id="slide23" class="slide">
+  <h2>Helpful Resources</h2>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element#semantic_elements" target="_blank">MDN: Semantic Elements</a></li>
+    <li><a href="https://webaim.org/techniques/semanticstructure/" target="_blank">WebAIM: Semantic Structure</a></li>
+    <li><a href="https://www.w3.org/WAI/tutorials/page-structure/" target="_blank">W3C WAI: Page Structure</a></li>
+  </ul>
+  <footer>Slide 23 / 30</footer>
+</div>
+
+<div id="slide24" class="slide">
+  <h2>Summary</h2>
+  <ul>
+    <li>Semantic tags improve clarity, accessibility & SEO</li>
+    <li>Div and Span have no semantic meaning but serve to group content</li>
+    <li>Accessibility basics are essential for inclusive web experiences</li>
+    <li>Use alt, label, and ARIA attributes wisely</li>
+  </ul>
+  <footer>Slide 24 / 30</footer>
+</div>
+
+<div id="slide25" class="slide">
+  <h2>Quick Quiz</h2>
+  <p>What semantic tag would you use for:</p>
+  <ul>
+    <li>a) Site navigation menu</li>
+    <li>b) A sidebar with related links</li>
+    <li>c) The main content of the page</li>
+  </ul>
+  <footer>Slide 25 / 30</footer>
+</div>
+
+<div id="slide26" class="slide">
+  <h2>Quick Quiz: Answers</h2>
+  <ul>
+    <li>a) &lt;nav&gt;</li>
+    <li>b) &lt;aside&gt;</li>
+    <li>c) &lt;main&gt;</li>
+  </ul>
+  <footer>Slide 26 / 30</footer>
+</div>
+
+<div id="slide27" class="slide">
+  <h2>Common Mistakes to Avoid</h2>
+  <ul>
+    <li>Using divs instead of semantic elements</li>
+    <li>Missing alt text on images</li>
+    <li>Not labeling form fields correctly</li>
+    <li>Overusing ARIA instead of native elements</li>
+  </ul>
+  <footer>Slide 27 / 30</footer>
+</div>
+
+<div id="slide28" class="slide">
+  <h2>Tips for Writing Accessible HTML</h2>
+  <ul>
+    <li>Use clear and concise language</li>
+    <li>Keep navigation consistent across pages</li>
+    <li>Ensure proper color contrast</li>
+    <li>Test with screen readers regularly</li>
+  </ul>
+  <footer>Slide 28 / 30</footer>
+</div>
+
+<div id="slide29" class="slide">
+  <h2>Next Steps</h2>
+  <ul>
+    <li>Practice building semantic layouts</li>
+    <li>Apply accessibility best practices on your projects</li>
+    <li>Review real websites with accessibility tools</li>
+    <li>Keep learning and stay updated with web standards</li>
+  </ul>
+  <footer>Slide 29 / 30</footer>
+</div>
+
+<div id="slide30" class="slide">
+  <h2>Thank You!</h2>
+  <p>Questions? Contact your instructor or discuss with peers.</p>
+  <p>Good luck practicing semantic HTML & accessibility!</p>
+  <footer>Slide 30 / 30</footer>
+</div>
+
+<nav class="nav-btns">
+  <button id="prevBtn" disabled>Previous</button>
+  <button id="nextBtn">Next</button>
+  <a href="day4.html">Day 4</a>
+</nav>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function showSlide(index) {
+    slides.forEach(s => s.classList.remove('active'));
+    slides[index].classList.add('active');
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length - 1;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    if (currentSlide > 0) {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+  });
+
+  // Keyboard navigation support
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      if (currentSlide < slides.length -1) {
+        currentSlide++;
+        showSlide(currentSlide);
+      }
+    } else if (e.key === 'ArrowLeft') {
+      if (currentSlide > 0) {
+        currentSlide--;
+        showSlide(currentSlide);
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
+

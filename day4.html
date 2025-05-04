@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 4: HTML5 Advanced Tags and Web Storage</title>
+<style>
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a202c;
+    color: #e2e8f0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .slide {
+    display: none;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    height: 600px;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+    position: relative;
+  }
+  .slide.active {
+    display: block;
+    animation: fadeIn 1s ease-in-out;
+  }
+  h1, h2 {
+    color: #63b3ed;
+    margin-bottom: 15px;
+  }
+  p, ul {
+    font-size: 1.12rem;
+    line-height: 1.6;
+  }
+  ul {
+    margin-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  code {
+    background: #2d3748;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-family: Consolas, monospace;
+    font-size: 1rem;
+    color: #90cdf4;
+  }
+  pre {
+    background: #2d3748;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    color: #90cdf4;
+    font-size: 0.95rem;
+    font-family: Consolas, monospace;
+  }
+  .footer {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 14px;
+    color: #a0aec0;
+  }
+  .nav-btns {
+    text-align: center;
+    margin: 15px 0;
+  }
+  button {
+    background-color: #3182ce;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    margin: 0 8px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #2b6cb0;
+  }
+  button:disabled {
+    background-color: #718096;
+    cursor: not-allowed;
+  }
+  .activity, .interview-questions {
+    margin-top: 15px;
+    list-style-type: square;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  /* Canvas in slide styles */
+  #canvasDrawing {
+    border: 2px solid #63b3ed;
+    border-radius: 8px;
+    background: #2d3748;
+    display: block;
+    margin-top: 15px;
+  }
+</style>
+</head>
+<body>
+
+<!-- Slide 1 -->
+<div id="slide1" class="slide active">
+  <h1>Day 4: HTML5 Advanced Tags and Web Storage</h1>
+  <p>Training Topics:</p>
+  <ul>
+    <li>HTML5 Advanced Tags: <code>&lt;canvas&gt;</code>, <code>&lt;details&gt;</code>, <code>&lt;summary&gt;</code></li>
+    <li>Responsive Images: <code>&lt;picture&gt;</code>, <code>srcset</code></li>
+    <li>Web Storage: <code>localStorage</code> / <code>sessionStorage</code></li>
+    <li><code>&lt;template&gt;</code>, <code>&lt;output&gt;</code> tags</li>
+    <li>Hands-on Tasks: Canvas drawing and saving input with localStorage</li>
+  </ul>
+  <div class="footer">Slide 1/30</div>
+</div>
+
+<!-- Slide 2 -->
+<div id="slide2" class="slide">
+  <h2>Introduction to HTML5 Advanced Tags</h2>
+  <p>HTML5 introduced new semantic and interactive tags that allow better structuring and dynamic content on web pages.</p>
+  <p>We will explore these modern tags and how they enhance user experience.</p>
+  <div class="footer">Slide 2/30</div>
+</div>
+
+<!-- Slide 3 -->
+<div id="slide3" class="slide">
+  <h2>The &lt;canvas&gt; Element</h2>
+  <p>The <code>&lt;canvas&gt;</code> element provides a drawable region, used for rendering graphics, animations, and game content via scripting.</p>
+  <p>It is a bitmap area where you can use JavaScript to draw shapes and images dynamically.</p>
+  <div class="footer">Slide 3/30</div>
+</div>
+
+<!-- Slide 4 -->
+<div id="slide4" class="slide">
+  <h2>Basic Canvas Example</h2>
+  <p>Example code to create a blue rectangle on canvas:</p>
+  <pre>
+&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+ctx.fillStyle = 'blue';
+ctx.fillRect(0, 0, 200, 100);
+&lt;/script&gt;
+  </pre>
+  <div class="footer">Slide 4/30</div>
+</div>
+
+<!-- Slide 5 -->
+<div id="slide5" class="slide">
+  <h2>Canvas Drawing Task</h2>
+  <p>Create a simple drawing on canvas using JavaScript. Draw shapes or text to practice canvas API basics.</p>
+  <p><strong>Example Task:</strong> Draw a filled red circle and some text below it.</p>
+  <div class="footer">Slide 5/30</div>
+</div>
+
+<!-- Slide 6 -->
+<div id="slide6" class="slide">
+  <h2>The &lt;details&gt; and &lt;summary&gt; Elements</h2>
+  <p>The <code>&lt;details&gt;</code> element creates a disclosure widget which users can open and close.</p>
+  <p>The first child <code>&lt;summary&gt;</code> acts as the visible heading or label for the toggled content.</p>
+  <div class="footer">Slide 6/30</div>
+</div>
+
+<!-- Slide 7 -->
+<div id="slide7" class="slide">
+  <h2>Example of &lt;details&gt; and &lt;summary&gt;</h2>
+  <pre>
+&lt;details&gt;
+  &lt;summary&gt;More Info&lt;/summary&gt;
+  &lt;p&gt;This content is initially hidden but can be shown by clicking the summary.&lt;/p&gt;
+&lt;/details&gt;
+  </pre>
+  <div class="footer">Slide 7/30</div>
+</div>
+
+<!-- Slide 8 -->
+<div id="slide8" class="slide">
+  <h2>Responsive Images Importance</h2>
+  <p>Responsive images help deliver the best resolution and size depending on device screen size and resolution, reducing load times and improving UX.</p>
+  <div class="footer">Slide 8/30</div>
+</div>
+
+<!-- Slide 9 -->
+<div id="slide9" class="slide">
+  <h2>The &lt;picture&gt; Element</h2>
+  <p>Allows providing multiple image sources for different device widths or pixel densities with media queries.</p>
+  <pre>
+&lt;picture&gt;
+  &lt;source srcset="small.jpg" media="(max-width: 600px)"&gt;
+  &lt;source srcset="medium.jpg" media="(max-width: 1200px)"&gt;
+  &lt;img src="large.jpg" alt="Example image"&gt;
+&lt;/picture&gt;
+  </pre>
+  <div class="footer">Slide 9/30</div>
+</div>
+
+<!-- Slide 10 -->
+<div id="slide10" class="slide">
+  <h2>The srcset Attribute</h2>
+  <p>Used in <code>&lt;img&gt;</code> for listing multiple image sizes to allow the browser to pick the best.</p>
+  <pre>
+&lt;img src="default.jpg" 
+     srcset="small.jpg 500w, medium.jpg 1000w, large.jpg 1500w" 
+     sizes="(max-width: 600px) 500px, 1000px" alt="Responsive Image"&gt;
+  </pre>
+  <div class="footer">Slide 10/30</div>
+</div>
+
+<!-- Slide 11 -->
+<div id="slide11" class="slide">
+  <h2>Web Storage Overview</h2>
+  <p>Web Storage allows client-side data to be stored persistently (<code>localStorage</code>) or per session (<code>sessionStorage</code>).</p>
+  <ul>
+    <li><code>localStorage</code>: persists until explicitly deleted</li>
+    <li><code>sessionStorage</code>: cleared on tab/window close</li>
+  </ul>
+  <div class="footer">Slide 11/30</div>
+</div>
+
+<!-- Slide 12 -->
+<div id="slide12" class="slide">
+  <h2>Using localStorage: Save Data</h2>
+  <pre>
+localStorage.setItem('key', 'value');
+  </pre>
+  <p>This saves information under "key".</p>
+  <div class="footer">Slide 12/30</div>
+</div>
+
+<!-- Slide 13 -->
+<div id="slide13" class="slide">
+  <h2>Using localStorage: Retrieve Data</h2>
+  <pre>
+const data = localStorage.getItem('key');
+console.log(data); // outputs stored value
+  </pre>
+  <div class="footer">Slide 13/30</div>
+</div>
+
+<!-- Slide 14 -->
+<div id="slide14" class="slide">
+  <h2>Using sessionStorage</h2>
+  <pre>
+sessionStorage.setItem('sessionKey', 'sessionValue');
+
+const sessionData = sessionStorage.getItem('sessionKey');
+console.log(sessionData);
+  </pre>
+  <div class="footer">Slide 14/30</div>
+</div>
+
+<!-- Slide 15 -->
+<div id="slide15" class="slide">
+  <h2>Task: Save User Input using localStorage</h2>
+  <p>Build a form that saves user-entered text in localStorage. When the page is refreshed, the input should be restored.</p>
+  <div class="footer">Slide 15/30</div>
+</div>
+
+<!-- Slide 16 -->
+<div id="slide16" class="slide">
+  <h2>The &lt;template&gt; Element</h2>
+  <p>Defines HTML fragments that are not rendered immediately but can be cloned and inserted dynamically via JavaScript.</p>
+  <pre>
+&lt;template id="myTemplate"&gt;
+  &lt;div class="card"&gt;Content here&lt;/div&gt;
+&lt;/template&gt;
+  </pre>
+  <div class="footer">Slide 16/30</div>
+</div>
+
+<!-- Slide 17 -->
+<div id="slide17" class="slide">
+  <h2>Using &lt;template&gt; with JavaScript</h2>
+  <pre>
+const template = document.getElementById('myTemplate');
+const clone = document.importNode(template.content, true);
+document.body.appendChild(clone);
+  </pre>
+  <div class="footer">Slide 17/30</div>
+</div>
+
+<!-- Slide 18 -->
+<div id="slide18" class="slide">
+  <h2>The &lt;output&gt; Element</h2>
+  <p>Represents the result of a calculation or user action, usable for displaying output dynamically.</p>
+  <p>Example:</p>
+  <pre>
+&lt;form oninput="result.value=parseInt(a.value)+parseInt(b.value)"&gt;
+  &lt;input type="number" id="a" value="0"&gt;
+  &lt;input type="number" id="b" value="0"&gt;
+  &lt;output name="result" for="a b"&gt;0&lt;/output&gt;
+&lt;/form&gt;
+  </pre>
+  <div class="footer">Slide 18/30</div>
+</div>
+
+<!-- Slide 19 -->
+<div id="slide19" class="slide">
+  <h2>Canvas Basic Shapes</h2>
+  <ul>
+    <li>Rectangle: <code>fillRect()</code>, <code>strokeRect()</code></li>
+    <li>Circle: <code>arc()</code></li>
+    <li>Path: <code>beginPath()</code>, <code>lineTo()</code>, <code>stroke()</code></li>
+  </ul>
+  <div class="footer">Slide 19/30</div>
+</div>
+
+<!-- Slide 20 -->
+<div id="slide20" class="slide">
+  <h2>Canvas Drawing Example: Red Circle & Text</h2>
+  <pre>
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+
+ctx.fillStyle = 'red';
+ctx.beginPath();
+ctx.arc(100, 75, 50, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.font = '18px Arial';
+ctx.fillText('Red Circle', 60, 150);
+  </pre>
+  <div class="footer">Slide 20/30</div>
+</div>
+
+<!-- Slide 21 -->
+<div id="slide21" class="slide">
+  <h2>Responsive Images: Why It Matters</h2>
+  <ul>
+    <li>Improves loading speed on small devices</li>
+    <li>Reduces bandwidth usage</li>
+    <li>Enhances SEO and user experience</li>
+  </ul>
+  <div class="footer">Slide 21/30</div>
+</div>
+
+<!-- Slide 22 -->
+<div id="slide22" class="slide">
+  <h2>Example: Picture with Multiple Sources</h2>
+  <pre>
+&lt;picture&gt;
+  &lt;source srcset="img-small.jpg" media="(max-width: 600px)"&gt;
+  &lt;source srcset="img-medium.jpg" media="(max-width: 1200px)"&gt;
+  &lt;img src="img-large.jpg" alt="Scenery"&gt;
+&lt;/picture&gt;
+  </pre>
+  <div class="footer">Slide 22/30</div>
+</div>
+
+<!-- Slide 23 -->
+<div id="slide23" class="slide">
+  <h2>Demo: Saving User Input with localStorage</h2>
+  <p>Example snippet to save and retrieve a user's name:</p>
+  <pre>
+const input = document.getElementById('nameInput');
+const savedName = localStorage.getItem('name');
+
+if(savedName) {
+  input.value = savedName;
+}
+
+input.addEventListener('input', () =&gt; {
+  localStorage.setItem('name', input.value);
+});
+  </pre>
+  <div class="footer">Slide 23/30</div>
+</div>
+
+<!-- Slide 24 -->
+<div id="slide24" class="slide">
+  <h2>Example HTML for User Input Save</h2>
+  <pre>
+&lt;input type="text" id="nameInput" placeholder="Enter your name"&gt;
+  </pre>
+  <div class="footer">Slide 24/30</div>
+</div>
+
+<!-- Slide 25 -->
+<div id="slide25" class="slide">
+  <h2>Accessibility Considerations</h2>
+  <ul>
+    <li>Use semantic HTML elements</li>
+    <li>Ensure &lt;canvas&gt; content is accessible or provide alternatives</li>
+    <li>Label any inputs clearly</li>
+    <li>Avoid hiding important info with &lt;details&gt; without good reason</li>
+  </ul>
+  <div class="footer">Slide 25/30</div>
+</div>
+
+<!-- Slide 26 -->
+<div id="slide26" class="slide">
+  <h2>Activity 1: Canvas Drawing</h2>
+  <ul class="activity">
+    <li>Create a canvas 300x150 pixels.</li>
+    <li>Draw 2 shapes using different colors.</li>
+    <li>Add text on the canvas describing the shapes.</li>
+  </ul>
+  <div class="footer">Slide 26/30</div>
+</div>
+
+<!-- Slide 27 -->
+<div id="slide27" class="slide">
+  <h2>Activity 2: Using localStorage</h2>
+  <ul class="activity">
+    <li>Create an input form for user feedback.</li>
+    <li>Save input data to localStorage on typing.</li>
+    <li>Load saved data back into the input on page reload.</li>
+  </ul>
+  <div class="footer">Slide 27/30</div>
+</div>
+
+<!-- Slide 28 -->
+<div id="slide28" class="slide">
+  <h2>Interview Questions</h2>
+  <ul class="interview-questions">
+    <li>What is the difference between localStorage and sessionStorage?</li>
+    <li>How do &lt;details&gt; and &lt;summary&gt; elements enhance usability?</li>
+    <li>Why use &lt;template&gt; elements in web apps?</li>
+    <li>Explain how the <code>srcset</code> attribute works.</li>
+    <li>What are common use cases for the &lt;canvas&gt; element?</li>
+  </ul>
+  <div class="footer">Slide 28/30</div>
+</div>
+
+<!-- Slide 29 -->
+<div id="slide29" class="slide">
+  <h2>Summary</h2>
+  <ul>
+    <li>HTML5 advanced tags provide powerful interactive features.</li>
+    <li>Responsive images improve load performance and UX.</li>
+    <li>Web storage allows persisting data locally for better apps.</li>
+    <li>&lt;template&gt; and &lt;output&gt; add flexibility to creating dynamic UI.</li>
+  </ul>
+  <div class="footer">Slide 29/30</div>
+</div>
+
+<!-- Slide 30 -->
+<div id="slide30" class="slide">
+  <h2>Thank You!</h2>
+  <p>Questions? Feel free to ask or experiment with today’s concepts.</p>
+  <p><em>Practice canvas drawing and saving user data to master dynamic HTML5 features.</em></p>
+  <div class="footer">Slide 30/30</div>
+</div>
+
+<!-- Navigation -->
+<div class="nav-btns">
+  <button id="prevBtn" onclick="prevSlide()" disabled>Previous</button>
+  <button id="nextBtn" onclick="nextSlide()">Next</button>
+  <a href="day5.html">Day 5</a>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function showSlide(index) {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === index);
+    });
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length -1;
+  }
+
+  function nextSlide() {
+    if (currentIndex < slides.length -1) {
+      currentIndex++;
+      showSlide(currentIndex);
+    }
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      showSlide(currentIndex);
+    }
+  }
+
+  // Keyboard navigation support (left, right arrows)
+  document.addEventListener('keydown', event => {
+    if (event.key === 'ArrowRight') nextSlide();
+    else if (event.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>
+

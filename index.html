@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTML Basics and Networking Presentation</title>
+<style>
+  
+  body{
+  font-family: Arial, sans-serif;
+    background: #171c28;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Set body height to full viewport height */
+    overflow: hidden; /* Hide scroll bars */}
+  .slide {
+    display: none;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    height: 500px;
+    max-width: 800px;
+    margin: 40px auto;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #1f2a48 0%, #253358 100%);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.7);
+    position: relative;
+  }
+  .slide.active {
+    display: block;
+  }
+  h1, h2, h3 {
+    color: #00bfff;
+  }
+  p, ul {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-top: 5px;
+  }
+  ul.activity, ul.interview-questions {
+    list-style-type: square;
+    padding-left: 20px;
+  }
+  .footer {
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
+    font-size: 0.85rem;
+    color: #7aa9ff;
+  }
+  .nav-btns {
+    text-align: center;
+    margin: 10px;
+  }
+  button {
+    background-color: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 18px;
+    margin: 0 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1rem;
+  }
+  button:hover {
+    background-color: #004c99;
+  }
+  code {
+    background: #0e1742;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: 1rem;
+    color: #9dfdff;
+  }
+</style>
+</head>
+<body>
+
+<div id="slide1" class="slide active">
+  <h1>Introduction to HTML Basics & Networking</h1>
+  <p>Day 1 Training Overview</p>
+  <ul>
+    <li>HTML basics: structure, tags, and formatting</li>
+    <li>Networking essentials: HTTP/HTTPS and browsers</li>
+    <li>Activities and interview questions included</li>
+  </ul>
+  <div class="footer">Slide 1 of 30</div>
+</div>
+
+<div id="slide2" class="slide">
+  <h2>What is HTML?</h2>
+  <p>HTML (HyperText Markup Language) is the standard markup language used to create web pages.</p>
+  <p>It structures content for the web browsers to display.</p>
+  <div class="footer">Slide 2 of 30</div>
+</div>
+
+<div id="slide3" class="slide">
+  <h2>Structure of an HTML Document</h2>
+  <p>Basic components:</p>
+  <ul>
+    <li><code>&lt;!DOCTYPE html&gt;</code> - declares document type</li>
+    <li><code>&lt;html&gt;</code> - root element</li>
+    <li><code>&lt;head&gt;</code> - metadata, title, links to CSS/JS</li>
+    <li><code>&lt;body&gt;</code> - visible content</li>
+  </ul>
+  <div class="footer">Slide 3 of 30</div>
+</div>
+
+<div id="slide4" class="slide">
+  <h2>Headings in HTML</h2>
+  <p>There are 6 levels of headings: <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>.</p>
+  <p><code>&lt;h1&gt;</code> is the highest level heading and <code>&lt;h6&gt;</code> the lowest.</p>
+  <div class="footer">Slide 4 of 30</div>
+</div>
+
+<div id="slide5" class="slide">
+  <h2>Paragraphs & Formatting Tags</h2>
+  <ul>
+    <li><code>&lt;p&gt;</code> - paragraph</li>
+    <li><code>&lt;strong&gt;</code> - bold</li>
+    <li><code>&lt;em&gt;</code> - italic</li>
+    <li><code>&lt;u&gt;</code> - underline</li>
+    <li><code>&lt;br&gt;</code> - line break</li>
+  </ul>
+  <div class="footer">Slide 5 of 30</div>
+</div>
+
+<div id="slide6" class="slide">
+  <h2>Links and Images</h2>
+  <ul>
+    <li><code>&lt;a href="url"&gt;</code> - hyperlink</li>
+    <li><code>&lt;img src="image.jpg" alt="description"&gt;</code> - image</li>
+  </ul>
+  <p>Link example: <code>&lt;a href="https://www.example.com"&gt;Example&lt;/a&gt;</code></p>
+  <p>Image example: <code>&lt;img src="pexels-photo.jpg" alt="Sample Image"&gt;</code></p>
+  <div class="footer">Slide 6 of 30</div>
+</div>
+
+<div id="slide7" class="slide">
+  <h2>Lists in HTML</h2>
+  <ul>
+    <li><code>&lt;ul&gt;</code> - unordered list</li>
+    <li><code>&lt;ol&gt;</code> - ordered list</li>
+    <li><code>&lt;dl&gt;</code> - description list</li>
+  </ul>
+  <p>Example: <code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></p>
+  <div class="footer">Slide 7 of 30</div>
+</div>
+
+<div id="slide8" class="slide">
+  <h2>Attributes in HTML</h2>
+  <p>Attributes provide additional information about elements.</p>
+  <ul>
+    <li>Placed inside the opening tag</li>
+    <li>Format: <code>name="value"</code></li>
+    <li>Common attributes: <code>id</code>, <code>class</code>, <code>style</code>, <code>href</code>, <code>src</code></li>
+  </ul>
+  <div class="footer">Slide 8 of 30</div>
+</div>
+
+<div id="slide9" class="slide">
+  <h2>Comments in HTML</h2>
+  <p>Used to leave notes within the code.</p>
+  <p>Syntax: <code>&lt;!-- Comment goes here --&gt;</code></p>
+  <div class="footer">Slide 9 of 30</div>
+</div>
+
+<div id="slide10" class="slide">
+  <h2>Block vs Inline Elements</h2>
+  <p><strong>Block elements:</strong> Take full width available, start on new lines.</p>
+  <p>Examples: <code>div, p, ul, h1</code></p>
+  <p><strong>Inline elements:</strong> Take only required width, flow within line.</p>
+  <p>Examples: <code>a, span, img, strong</code></p>
+  <div class="footer">Slide 10 of 30</div>
+</div>
+
+<div id="slide11" class="slide">
+  <h2>Introduction to Networking Basics</h2>
+  <p>Networking connects computers to share data and resources.</p>
+  <ul>
+    <li>Fundamental to the internet and web browsing</li>
+    <li>Web uses protocols to transfer and display content</li>
+  </ul>
+  <div class="footer">Slide 11 of 30</div>
+</div>
+
+<div id="slide12" class="slide">
+  <h2>What are Protocols?</h2>
+  <p>Protocols are rules that define how data is transmitted over a network.</p>
+  <ul>
+    <li>Common protocol: HTTP (Hypertext Transfer Protocol)</li>
+    <li>Secure variant: HTTPS (HTTP Secure)</li>
+  </ul>
+  <div class="footer">Slide 12 of 30</div>
+</div>
+
+<div id="slide13" class="slide">
+  <h2>HTTP - Hypertext Transfer Protocol</h2>
+  <p>Protocol for communication between web browsers and servers.</p>
+  <ul>
+    <li>Works over TCP/IP for web page delivery</li>
+    <li>Stateless protocol: no data retention between requests</li>
+  </ul>
+  <div class="footer">Slide 13 of 30</div>
+</div>
+
+<div id="slide14" class="slide">
+  <h2>HTTPS - HTTP Secure</h2>
+  <p>Secure communication over the internet using SSL/TLS encryption.</p>
+  <ul>
+    <li>Protects data integrity and privacy</li>
+    <li>Uses certificates to validate identity</li>
+    <li>Important for safe online transactions</li>
+  </ul>
+  <div class="footer">Slide 14 of 30</div>
+</div>
+
+<div id="slide15" class="slide">
+  <h2>How HTTPS Works</h2>
+  <ul>
+    <li>Browser connects to server and requests certificate</li>
+    <li>Server sends SSL certificate to browser</li>
+    <li>Browser verifies certificate authenticity</li>
+    <li>Encrypted session established for data transfer</li>
+  </ul>
+  <div class="footer">Slide 15 of 30</div>
+</div>
+
+<div id="slide16" class="slide">
+  <h2>What is a Browser?</h2>
+  <p>A software application to access and display web content.</p>
+  <ul>
+    <li>Examples: Chrome, Firefox, Edge, Safari</li>
+    <li>Interprets HTML, CSS, and JavaScript</li>
+  </ul>
+  <div class="footer">Slide 16 of 30</div>
+</div>
+
+<div id="slide17" class="slide">
+  <h2>How Browsers Work</h2>
+  <ul>
+    <li>User types URL or clicks link</li>
+    <li>Browser sends HTTP/HTTPS request to web server</li>
+    <li>Server responds with HTML data</li>
+    <li>Browser renders the page content</li>
+  </ul>
+  <div class="footer">Slide 17 of 30</div>
+</div>
+
+<div id="slide18" class="slide">
+  <h2>URLs and Domains</h2>
+  <p><strong>URL:</strong> Web address that locates a resource</p>
+  <p><strong>Domain:</strong> Name representing an IP address</p>
+  <p>Example: <code>https://www.example.com/index.html</code></p>
+  <div class="footer">Slide 18 of 30</div>
+</div>
+
+<div id="slide19" class="slide">
+  <h2>Activity: Build a Profile Page</h2>
+  <p>Create a simple web page that has:</p>
+  <ul class="activity">
+    <li>Heading for your name</li>
+    <li>A paragraph describing yourself</li>
+    <li>An image (profile picture or avatar)</li>
+    <li>List your hobbies using <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code></li>
+  </ul>
+  <p>Use HTML tags learned so far.</p>
+  <div class="footer">Slide 19 of 30</div>
+</div>
+
+<div id="slide20" class="slide">
+  <h2>Activity: Add Links and Formatting</h2>
+  <p>Enhance the profile page created in previous activity by adding:</p>
+  <ul class="activity">
+    <li>Links to your social media profiles</li>
+    <li>Use formatting tags: <code>strong</code>, <code>em</code>, <code>u</code></li>
+    <li>Add comments in your code explaining parts</li>
+  </ul>
+  <div class="footer">Slide 20 of 30</div>
+</div>
+
+<div id="slide21" class="slide">
+  <h2>Interview Questions</h2>
+  <ul class="interview-questions">
+    <li>What is HTML and why is it used?</li>
+    <li>Explain the difference between block and inline elements.</li>
+    <li>What are attributes in HTML? Give examples.</li>
+    <li>How does HTTPS differ from HTTP?</li>
+    <li>What is a web browser? Name some popular browsers.</li>
+  </ul>
+  <div class="footer">Slide 21 of 30</div>
+</div>
+
+<div id="slide22" class="slide">
+  <h2>Further HTML Elements</h2>
+  <ul>
+    <li><code>div</code> - section container</li>
+    <li><code>span</code> - inline container</li>
+    <li><code>form</code>, <code>input</code> - user input elements</li>
+    <li><code>table</code> - tabular data</li>
+  </ul>
+  <div class="footer">Slide 22 of 30</div>
+</div>
+
+<div id="slide23" class="slide">
+  <h2>Useful HTML Attributes</h2>
+  <ul>
+    <li><code>alt</code> - alternative text for images</li>
+    <li><code>title</code> - tooltip text</li>
+    <li><code>target</code> - link target (_blank, _self)</li>
+    <li><code>style</code> - inline CSS styles</li>
+  </ul>
+  <div class="footer">Slide 23 of 30</div>
+</div>
+
+<div id="slide24" class="slide">
+  <h2>Using Comments Effectively</h2>
+  <p>Helpful for collaborators and future maintenance.</p>
+  <p>Never leave sensitive information in comments!</p>
+  <div class="footer">Slide 24 of 30</div>
+</div>
+
+<div id="slide25" class="slide">
+  <h2>Common HTML Mistakes</h2>
+  <ul>
+    <li>Missing closing tags</li>
+    <li>Improper nesting of tags</li>
+    <li>Incorrect attribute values</li>
+    <li>Using deprecated tags</li>
+  </ul>
+  <div class="footer">Slide 25 of 30</div>
+</div>
+
+<div id="slide26" class="slide">
+  <h2>Web Security Basics</h2>
+  <p>Browsers warn about insecure websites (HTTP without HTTPS).</p>
+  <p>Always use HTTPS for sensitive data exchange.</p>
+  <div class="footer">Slide 26 of 30</div>
+</div>
+
+<div id="slide27" class="slide">
+  <h2>How to Check if a Website is Secure</h2>
+  <ul>
+    <li>Look for a padlock icon in address bar</li>
+    <li>URL starts with <code>https://</code></li>
+    <li>Validate certificate details if needed</li>
+  </ul>
+  <div class="footer">Slide 27 of 30</div>
+</div>
+
+<div id="slide28" class="slide">
+  <h2>Tips for Writing Clean HTML</h2>
+  <ul>
+    <li>Indent your code properly</li>
+    <li>Use lowercase for tags and attributes</li>
+    <li>Add meaningful comments</li>
+    <li>Validate HTML with online tools</li>
+  </ul>
+  <div class="footer">Slide 28 of 30</div>
+</div>
+
+<div id="slide29" class="slide">
+  <h2>Summary of Today’s Topics</h2>
+  <ul>
+    <li>HTML basics: structure, headings, paragraphs, lists, links, images, attributes</li>
+    <li>Understanding HTTP and HTTPS protocols</li>
+    <li>Browser role and functioning</li>
+    <li>Practical activities to build HTML skills</li>
+  </ul>
+  <div class="footer">Slide 29 of 30</div>
+</div>
+
+<div id="slide30" class="slide">
+  <h2>Thank You!</h2>
+  <p>Any questions?</p>
+  <p>You can practice by creating web pages and exploring network protocols.</p>
+  <p><em>Good luck and happy coding!</em></p>
+  <div class="footer">Slide 30 of 30</div>
+</div>
+
+<div class="nav-btns">
+  <button id="prevBtn" onclick="prevSlide()">Previous</button>
+  <button id="nextBtn" onclick="nextSlide()">Next</button>
+  <a href="day2.html">Day 1</a>
+</div>
+
+<script>
+  let currentSlide = 1;
+  const totalSlides = 30;
+
+  function showSlide(n) {
+    const slides = document.querySelectorAll(".slide");
+    if (n > totalSlides) currentSlide = totalSlides;
+    if (n < 1) currentSlide = 1;
+    slides.forEach(slide => slide.classList.remove("active"));
+    slides[currentSlide - 1].classList.add("active");
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides) {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+  }
+
+  function prevSlide() {
+    if (currentSlide > 1) {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+  }
+</script>
+
+</body>
+</html>

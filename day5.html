@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Day 5: SEO Basics & Portfolio Project</title>
+<style>
+  body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1e293b;
+    color: #e2e8f0;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .slide {
+    display: none;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    height: 600px;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.8);
+    position: relative;
+  }
+  .slide.active {
+    display: block;
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  h1, h2 {
+    color: #60a5fa;
+    margin-bottom: 15px;
+  }
+  p, ul {
+    font-size: 1.12rem;
+    line-height: 1.5;
+  }
+  ul {
+    margin-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  code {
+    background: #1e293b;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-family: Consolas, monospace;
+    font-size: 1rem;
+    color: #93c5fd;
+  }
+  pre {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    color: #93c5fd;
+    font-size: 0.95rem;
+    font-family: Consolas, monospace;
+  }
+  .footer {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    font-size: 14px;
+    color: #94a3b8;
+  }
+  .nav-btns {
+    text-align: center;
+    margin: 15px 0;
+  }
+  button {
+    background-color: #3b82f6;
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    margin: 0 8px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: #2563eb;
+  }
+  button:disabled {
+    background-color: #64748b;
+    cursor: not-allowed;
+  }
+  .activity, .interview-questions {
+    margin-top: 15px;
+    list-style-type: square;
+  }
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Slide 1 -->
+<div id="slide1" class="slide active">
+  <h1>Day 5: SEO Basics & Portfolio Project</h1>
+  <p>Topics of the day:</p>
+  <ul>
+    <li>SEO Basics: meta tags, title, description</li>
+    <li>Best Practices: page structure, performance</li>
+    <li>Interview Q&A: theory & coding</li>
+    <li>Mini Project: Responsive Portfolio & Code Review</li>
+    <li>HTML Mini Quiz & Mock Interview</li>
+  </ul>
+  <div class="footer">Slide 1/30</div>
+</div>
+
+<!-- Slide 2 -->
+<div id="slide2" class="slide">
+  <h2>What is SEO?</h2>
+  <p>SEO stands for Search Engine Optimization – the practice of improving website visibility to appear higher in search engine results.</p>
+  <p>Proper SEO helps attract organic traffic and improves site credibility.</p>
+  <div class="footer">Slide 2/30</div>
+</div>
+
+<!-- Slide 3 -->
+<div id="slide3" class="slide">
+  <h2>Important SEO Meta Tags</h2>
+  <ul>
+    <li><code>&lt;title&gt;</code>: Defines the page title in browser tabs and search results.</li>
+    <li><code>&lt;meta name="description" content="..."&gt;</code>: Summary of page content for search snippets.</li>
+    <li><code>&lt;meta name="keywords" content="..."&gt;</code> (less used but sometimes helpful)</li>
+    <li><code>&lt;meta charset="UTF-8"&gt;</code>: Defines character encoding for accessibility.</li>
+  </ul>
+  <div class="footer">Slide 3/30</div>
+</div>
+
+<!-- Slide 4 -->
+<div id="slide4" class="slide">
+  <h2>Example: Basic SEO Meta Tags</h2>
+  <pre>
+&lt;head&gt;
+  &lt;title&gt;John Doe - Portfolio&lt;/title&gt;
+  &lt;meta name="description" content="Portfolio of John Doe - web developer and designer."&gt;
+  &lt;meta charset="UTF-8"&gt;
+&lt;/head&gt;
+  </pre>
+  <div class="footer">Slide 4/30</div>
+</div>
+
+<!-- Slide 5 -->
+<div id="slide5" class="slide">
+  <h2>Page Structure Best Practices</h2>
+  <ul>
+    <li>Use semantic tags: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+    <li>Ensure heading hierarchy: <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>.</li>
+    <li>Organize content in <code>&lt;section&gt;</code> and <code>&lt;article&gt;</code> for readability and SEO.</li>
+  </ul>
+  <div class="footer">Slide 5/30</div>
+</div>
+
+<!-- Slide 6 -->
+<div id="slide6" class="slide">
+  <h2>Performance Optimization for SEO</h2>
+  <ul>
+    <li>Minimize page load time using compressed images, scripts, and styles.</li>
+    <li>Use caching and CDN for faster delivery.</li>
+    <li>Limit unnecessary scripts and heavy animations.</li>
+    <li>Use responsive design to support all devices.</li>
+  </ul>
+  <div class="footer">Slide 6/30</div>
+</div>
+
+<!-- Slide 7 -->
+<div id="slide7" class="slide">
+  <h2>SEO-Friendly URLs</h2>
+  <ul>
+    <li>Use descriptive and readable URLs.</li>
+    <li>Include keywords relevant to the content.</li>
+    <li>Avoid lengthy query strings and special characters.</li>
+  </ul>
+  <div class="footer">Slide 7/30</div>
+</div>
+
+<!-- Slide 8 -->
+<div id="slide8" class="slide">
+  <h2>Mobile-First Indexing and SEO</h2>
+  <p>Google prioritizes mobile versions of websites for indexing and ranking.</p>
+  <ul>
+    <li>Ensure your site is responsive.</li>
+    <li>Test usability on mobile devices.</li>
+    <li>Avoid blocking resources required for rendering on mobile.</li>
+  </ul>
+  <div class="footer">Slide 8/30</div>
+</div>
+
+<!-- Slide 9 -->
+<div id="slide9" class="slide">
+  <h2>Image Optimization for SEO</h2>
+  <ul>
+    <li>Use descriptive <code>alt</code> attributes for images.</li>
+    <li>Compress images without losing quality.</li>
+    <li>Use next-gen formats like WebP.</li>
+  </ul>
+  <div class="footer">Slide 9/30</div>
+</div>
+
+<!-- Slide 10 -->
+<div id="slide10" class="slide">
+  <h2>Content and Keyword Strategy</h2>
+  <ul>
+    <li>Create relevant, helpful, and unique content.</li>
+    <li>Use keywords naturally in titles, headers, and paragraphs.</li>
+    <li>Avoid keyword stuffing to prevent penalties.</li>
+  </ul>
+  <div class="footer">Slide 10/30</div>
+</div>
+
+<!-- Slide 11 -->
+<div id="slide11" class="slide">
+  <h2>Mini Project: Responsive Portfolio Overview</h2>
+  <p>Task: Build a responsive portfolio website showcasing your skills and projects.</p>
+  <ul>
+    <li>Include home, about, projects, and contact sections.</li>
+    <li>Use semantic HTML and responsive layouts.</li>
+    <li>Apply best SEO practices covered in this lesson.</li>
+  </ul>
+  <div class="footer">Slide 11/30</div>
+</div>
+
+<!-- Slide 12 -->
+<div id="slide12" class="slide">
+  <h2>Responsive Portfolio Tips</h2>
+  <ul>
+    <li>Use flexible grids and media queries.</li>
+    <li>Optimize images and assets.</li>
+    <li>Keep navigation intuitive and accessible.</li>
+    <li>Use clear headings and descriptive content.</li>
+  </ul>
+  <div class="footer">Slide 12/30</div>
+</div>
+
+<!-- Slide 13 -->
+<div id="slide13" class="slide">
+  <h2>Code Review: What to Check</h2>
+  <ul>
+    <li>Semantic structure and heading usage.</li>
+    <li>Proper meta tags for SEO.</li>
+    <li>Responsive design and mobile usability.</li>
+    <li>Performance and loading speed.</li>
+  </ul>
+  <div class="footer">Slide 13/30</div>
+</div>
+
+<!-- Slide 14 -->
+<div id="slide14" class="slide">
+  <h2>Mini Quiz: Meta Tags</h2>
+  <ul>
+    <li>What tag specifies the page title?</li>
+    <li>Why is the meta description tag important?</li>
+    <li>Is the keywords meta tag still relevant?</li>
+  </ul>
+  <div class="footer">Slide 14/30</div>
+</div>
+
+<!-- Slide 15 -->
+<div id="slide15" class="slide">
+  <h2>Mini Quiz: Best Practices</h2>
+  <ul>
+    <li>What is semantic HTML?</li>
+    <li>Why optimize images?</li>
+    <li>How to ensure mobile friendliness?</li>
+  </ul>
+  <div class="footer">Slide 15/30</div>
+</div>
+
+<!-- Slide 16 -->
+<div id="slide16" class="slide">
+  <h2>Interview Q&A: Meta Tags</h2>
+  <ul class="interview-questions">
+    <li>Q: What does the <code>&lt;title&gt;</code> tag do?</li>
+    <li>A: Defines the title shown in browser tabs and search results.</li>
+    <li>Q: How do meta descriptions affect SEO?</li>
+    <li>A: They provide page summaries influencing click-through rates.</li>
+  </ul>
+  <div class="footer">Slide 16/30</div>
+</div>
+
+<!-- Slide 17 -->
+<div id="slide17" class="slide">
+  <h2>Interview Q&A: Performance</h2>
+  <ul class="interview-questions">
+    <li>Q: How can page speed impact SEO?</li>
+    <li>A: Faster pages improve user experience and search rankings.</li>
+    <li>Q: Name ways to improve web performance.</li>
+    <li>A: Image compression, caching, minimizing scripts, CDN usage.</li>
+  </ul>
+  <div class="footer">Slide 17/30</div>
+</div>
+
+<!-- Slide 18 -->
+<div id="slide18" class="slide">
+  <h2>Interview Q&A: Responsive Design</h2>
+  <ul class="interview-questions">
+    <li>Q: What is responsive web design?</li>
+    <li>A: Designing sites that adapt to various screen sizes and devices.</li>
+    <li>Q: How do media queries work?</li>
+    <li>A: They apply CSS styles conditionally based on device characteristics.</li>
+  </ul>
+  <div class="footer">Slide 18/30</div>
+</div>
+
+<!-- Slide 19 -->
+<div id="slide19" class="slide">
+  <h2>Interview Q&A: Semantic HTML</h2>
+  <ul class="interview-questions">
+    <li>Q: Why use semantic HTML tags?</li>
+    <li>A: They improve accessibility, SEO, and code clarity.</li>
+    <li>Q: Give examples of semantic tags.</li>
+    <li>A: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>.</li>
+  </ul>
+  <div class="footer">Slide 19/30</div>
+</div>
+
+<!-- Slide 20 -->
+<div id="slide20" class="slide">
+  <h2>Mock Coding Interview: Task</h2>
+  <p>Create a basic responsive portfolio homepage with:</p>
+  <ul>
+    <li>A header with your name and navigation menu.</li>
+    <li>A main section with an introduction and a projects list.</li>
+    <li>A footer with contact info.</li>
+  </ul>
+  <div class="footer">Slide 20/30</div>
+</div>
+
+<!-- Slide 21 -->
+<div id="slide21" class="slide">
+  <h2>Example: Responsive Navigation Bar</h2>
+  <pre>
+&lt;nav&gt;
+  &lt;ul class="nav-list"&gt;
+    &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+  </pre>
+  <div class="footer">Slide 21/30</div>
+</div>
+
+<!-- Slide 22 -->
+<div id="slide22" class="slide">
+  <h2>Example: Media Query for Responsiveness</h2>
+  <pre>
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+  </pre>
+  <div class="footer">Slide 22/30</div>
+</div>
+
+<!-- Slide 23 -->
+<div id="slide23" class="slide">
+  <h2>Code Review Tips</h2>
+  <ul>
+    <li>Check HTML semantic correctness.</li>
+    <li>Validate via W3C standards.</li>
+    <li>Test on multiple devices and browsers.</li>
+    <li>Analyze load speed and SEO audit.</li>
+  </ul>
+  <div class="footer">Slide 23/30</div>
+</div>
+
+<!-- Slide 24 -->
+<div id="slide24" class="slide">
+  <h2>Mini Quiz: SEO</h2>
+  <ul>
+    <li>What tag defines the page title?</li>
+    <li>What attribute provides image descriptions?</li>
+    <li>Why use semantic tags?</li>
+    <li>How does page speed affect ranks?</li>
+  </ul>
+  <div class="footer">Slide 24/30</div>
+</div>
+
+<!-- Slide 25 -->
+<div id="slide25" class="slide">
+  <h2>Mini Quiz: Responsive Design</h2>
+  <ul>
+    <li>What is mobile-first design?</li>
+    <li>What does a media query do?</li>
+    <li>How to make images responsive?</li>
+  </ul>
+  <div class="footer">Slide 25/30</div>
+</div>
+
+<!-- Slide 26 -->
+<div id="slide26" class="slide">
+  <h2>Practice Project Milestones</h2>
+  <ul>
+    <li>Design structure with wireframes.</li>
+    <li>Implement responsive HTML & CSS.</li>
+    <li>Optimize content for SEO.</li>
+    <li>Test and review code.</li>
+  </ul>
+  <div class="footer">Slide 26/30</div>
+</div>
+
+<!-- Slide 27 -->
+<div id="slide27" class="slide">
+  <h2>Resources for Continued Learning</h2>
+  <ul>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" style="color:#60a5fa;">MDN Web Docs - HTML</a></li>
+    <li><a href="https://web.dev/seo-basics/" target="_blank" style="color:#60a5fa;">Web.dev SEO Basics</a></li>
+    <li><a href="https://web.dev/responsive-web-design-basics/" target="_blank" style="color:#60a5fa;">Responsive Web Design</a></li>
+    <li><a href="https://html5boilerplate.com/" target="_blank" style="color:#60a5fa;">HTML5 Boilerplate</a></li>
+  </ul>
+  <div class="footer">Slide 27/30</div>
+</div>
+
+<!-- Slide 28 -->
+<div id="slide28" class="slide">
+  <h2>Final Tips for Interview Preparation</h2>
+  <ul>
+    <li>Understand core HTML concepts deeply.</li>
+    <li>Practice coding common layouts.</li>
+    <li>Explain your code clearly.</li>
+    <li>Prepare to discuss SEO and performance optimizations.</li>
+  </ul>
+  <div class="footer">Slide 28/30</div>
+</div>
+
+<!-- Slide 29 -->
+<div id="slide29" class="slide">
+  <h2>Summary</h2>
+  <ul>
+    <li>Learned SEO fundamentals & meta tags.</li>
+    <li>Best practices for responsive and semantic HTML.</li>
+    <li>Prepared for interview theory and coding.</li>
+    <li>Started building a real portfolio project.</li>
+  </ul>
+  <div class="footer">Slide 29/30</div>
+</div>
+
+<!-- Slide 30 -->
+<div id="slide30" class="slide">
+  <h2>Thank You!</h2>
+  <p>Practice building projects and prepare for interviews confidently.</p>
+  <p><em>Good luck on your HTML journey!</em></p>
+  <div class="footer">Slide 30/30</div>
+</div>
+
+<div class="nav-btns">
+  <button id="prevBtn" onclick="prevSlide()" disabled>Previous</button>
+  <button id="nextBtn" onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let currentIndex = 0;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === slides.length -1;
+  }
+
+  function nextSlide() {
+    if (currentIndex < slides.length - 1) {
+      currentIndex++;
+      showSlide(currentIndex);
+    }
+  }
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      showSlide(currentIndex);
+    }
+  }
+  
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') nextSlide();
+    else if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
+</html>
